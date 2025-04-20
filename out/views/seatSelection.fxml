@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.SeatController">
+    <children>
+        <Label layoutX="100" layoutY="20" text="Select Seats" style="-fx-font-size: 20px;"/>
+
+        <GridPane fx:id="seatGrid" layoutX="50" layoutY="60" hgap="10" vgap="10">
+            <!-- Seat buttons will be dynamically added here -->
+        </GridPane>
+
+        <Button layoutX="180" layoutY="300" text="Confirm Seats" onAction="#confirmSeats"/>
+    </children>
+</AnchorPane>

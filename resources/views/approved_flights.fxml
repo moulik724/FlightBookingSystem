@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ApprovedFlightsController" styleClass="root">
+    <!-- Background Image -->
+    <ImageView fitWidth="1700" fitHeight="900" preserveRatio="false">
+        <image>
+            <Image url="/airplane.jpg" />
+        </image>
+    </ImageView>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="30" bottom="30" left="50" right="50"/>
+            </padding>
+
+            <Label text="Approved Flights" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+            <!-- Glassmorphic Table -->
+            <VBox style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 4); -fx-padding: 20;">
+                <TableView fx:id="approvedFlightsTable" prefWidth="700" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="flightNumberCol" text="Flight Number" prefWidth="140"/>
+                        <TableColumn fx:id="departureCol" text="Departure" prefWidth="150"/>
+                        <TableColumn fx:id="originCol" text="Origin" prefWidth="120"/>
+                        <TableColumn fx:id="destinationCol" text="Destination" prefWidth="120"/>
+                        <TableColumn fx:id="approvedCol" text="Approved?" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Close Button -->
+            <Button text="Close" onAction="#handleCloseWindow"
+                    style="-fx-background-color: #ff4c4c; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 30;"/>
+        </VBox>
+    </center>
+</BorderPane>

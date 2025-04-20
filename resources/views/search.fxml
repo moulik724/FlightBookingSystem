@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.FlightSearchController">
+
+    <!-- Background Image -->
+    <ImageView fitWidth="1700" fitHeight="900" preserveRatio="false">
+        <image>
+            <Image url="/airplane.jpg" />
+        </image>
+    </ImageView>
+
+    <!-- Glassmorphic Main Container -->
+    <VBox alignment="TOP_CENTER" spacing="20" maxWidth="850" style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 20;">
+        <padding>
+            <Insets top="30" left="40" right="40" bottom="30"/>
+        </padding>
+
+        <!-- Title -->
+        <Label text="Search Flights" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+        <!-- Source Field -->
+        <TextField fx:id="sourceField" promptText="Source" prefWidth="250"
+                   style="-fx-background-color: #f4f4f4; -fx-border-radius: 8; -fx-padding: 8; -fx-font-size: 14px; -fx-border-color: #ddd; -fx-border-width: 1;" />
+
+        <!-- Destination Field -->
+        <TextField fx:id="destinationField" promptText="Destination" prefWidth="250"
+                   style="-fx-background-color: #f4f4f4; -fx-border-radius: 8; -fx-padding: 8; -fx-font-size: 14px; -fx-border-color: #ddd; -fx-border-width: 1;" />
+
+        <!-- Date Picker -->
+        <DatePicker fx:id="datePicker" prefWidth="250" 
+                    style="-fx-background-color: #f4f4f4; -fx-border-radius: 8; -fx-padding: 8; -fx-font-size: 14px; -fx-border-color: #ddd; -fx-border-width: 1;" />
+
+        <!-- Search Button -->
+        <Button text="Search" onAction="#handleSearch" 
+                style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20;" />
+
+        <!-- Flight List -->
+        <ListView fx:id="flightsList" prefHeight="200" prefWidth="250"
+                  style="-fx-background-color: #f4f4f4; -fx-border-radius: 8; -fx-padding: 8; -fx-border-color: #ddd; -fx-border-width: 1;" />
+
+        <!-- Book Selected Flight Button -->
+        <Button text="Book Selected Flight" onAction="#handleBook" 
+                style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20;" />
+
+        <!-- Go Back Button -->
+        <Button fx:id="goBackDashboardButton" onAction="#goBackToDashboard" text="Dashboard" 
+                style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 10 20;" />
+    </VBox>
+</StackPane>

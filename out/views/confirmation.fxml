@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="yourpackage.ConfirmationController">
+    <VBox alignment="CENTER" spacing="20" layoutX="50" layoutY="50">
+        <Text fx:id="confirmationText" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <Text fx:id="bookingDetailsText" style="-fx-font-size: 16px;"/>
+        <Button text="Download Ticket" fx:id="downloadButton" style="-fx-font-size: 16px;"/>
+    </VBox>
+</AnchorPane>

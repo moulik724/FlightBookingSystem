@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminController" spacing="10" alignment="CENTER" prefWidth="300" prefHeight="200">
+    <children>
+        <Label text="Admin Panel"/>
+        <TextField fx:id="flightNameField" promptText="Flight Name"/>
+        <TextField fx:id="sourceField" promptText="Source"/>
+        <TextField fx:id="destinationField" promptText="Destination"/>
+        <Button text="Add Flight" onAction="#handleAddFlight"/>
+        <Button text="Add New Admin" onAction="#handleAddAdmin"/>
+    </children>
+</VBox>

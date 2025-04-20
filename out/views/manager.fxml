@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.ManagerController">
+    <Label text="Pending Seat Updates for Approval" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <TableView fx:id="seatsTable" prefHeight="300" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="flightIdCol" text="Flight ID" />
+            <TableColumn fx:id="typeCol" text="Seat Type" />
+            <TableColumn fx:id="priceCol" text="Price" />
+            <TableColumn fx:id="featuresCol" text="Features" />
+            <TableColumn fx:id="approvedCol" text="Approved?" />
+        </columns>
+    </TableView>
+
+    <Button fx:id="approveBtn" text="Approve Selected Seat" onAction="#approveSelected" />
+</VBox>

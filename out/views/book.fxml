@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" 
+           xmlns="http://javafx.com/javafx/8"
+           fx:controller="controller.BookingController">
+
+    <!-- Main Background Container -->
+    <VBox alignment="TOP_CENTER" style="-fx-background-color: linear-gradient(to bottom right, #f8f9fa, #e9ecef);">
+    
+        <!-- Header Section -->
+        <HBox alignment="CENTER" style="-fx-background-color: #4C8BF5; -fx-padding: 15;">
+            <Label text="Book Your Flight" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white;" />
+        </HBox>
+        
+        <!-- Content Area -->
+        <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <content>
+                <VBox spacing="25" alignment="TOP_CENTER">
+                    <padding>
+                        <Insets top="30" right="50" bottom="30" left="50"/>
+                    </padding>
+                    
+                    <!-- Flight Information Section -->
+                    <VBox style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 4);">
+                        <padding>
+                            <Insets top="20" right="25" bottom="20" left="25"/>
+                        </padding>
+                        <Label text="Flight Information" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Separator style="-fx-background-color: #e0e0e0; -fx-padding: 5 0 10 0;"/>
+                        
+                        <GridPane hgap="20" vgap="15">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="30" />
+                                <ColumnConstraints percentWidth="70" />
+                            </columnConstraints>
+                            
+                            <Label text="User ID:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <TextField fx:id="userIdField" editable="false" style="-fx-background-color: #f8f9fa; -fx-background-radius: 8;" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            
+                            <Label text="Flight Number:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <TextField fx:id="flightNumberField" editable="false" style="-fx-background-color: #f8f9fa; -fx-background-radius: 8;" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        </GridPane>
+                    </VBox>
+                    
+                    <!-- Personal Information Section -->
+                    <VBox style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 4);">
+                        <padding>
+                            <Insets top="20" right="25" bottom="20" left="25"/>
+                        </padding>
+                        <Label text="Personal Information" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Separator style="-fx-background-color: #e0e0e0; -fx-padding: 5 0 10 0;"/>
+                        
+                        <GridPane hgap="20" vgap="15">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="30" />
+                                <ColumnConstraints percentWidth="70" />
+                            </columnConstraints>
+                            
+                            <Label text="Name:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <TextField fx:id="nameField" promptText="Enter your full name" style="-fx-background-radius: 8;" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            
+                            <Label text="Date of Birth:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <TextField fx:id="dobField" promptText="DD-MM-YYYY" style="-fx-background-radius: 8;" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                            
+                            <Label text="Phone:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                            <TextField fx:id="phoneField" promptText="Enter your phone number" style="-fx-background-radius: 8;" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            
+                            <Label text="Email:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                            <TextField fx:id="emailField" promptText="Enter your email address" style="-fx-background-radius: 8;" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                            
+                            <Label text="Address:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                            <TextField fx:id="addressField" promptText="Enter your address" style="-fx-background-radius: 8;" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                        </GridPane>
+                    </VBox>
+                    
+                    <!-- Booking Details Section -->
+                    <VBox style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 4);">
+                        <padding>
+                            <Insets top="20" right="25" bottom="20" left="25"/>
+                        </padding>
+                        <Label text="Booking Details" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Separator style="-fx-background-color: #e0e0e0; -fx-padding: 5 0 10 0;"/>
+                        
+                        <GridPane hgap="20" vgap="15">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="30" />
+                                <ColumnConstraints percentWidth="70" />
+                            </columnConstraints>
+                            
+                            <Label text="Number of Seats:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <ComboBox fx:id="seatsDropdown" onAction="#handleSeatSelection" style="-fx-background-radius: 8; -fx-border-radius: 8;" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            
+                            <Label text="Passenger Details:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.valignment="TOP" />
+                            <ScrollPane style="-fx-background: transparent; -fx-background-color: transparent;" fitToWidth="true" prefHeight="300" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                                <VBox fx:id="passengerDetailsContainer" spacing="15" style="-fx-background-color: #f8f9fa; -fx-background-radius: 8;">
+                                    <padding>
+                                        <Insets top="15" right="15" bottom="15" left="15"/>
+                                    </padding>
+                                </VBox>
+                            </ScrollPane>
+                        </GridPane>
+                    </VBox>
+                    
+                    <!-- Seat Selection Section -->
+                    <VBox style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 4);">
+                        <padding>
+                            <Insets top="20" right="25" bottom="20" left="25"/>
+                        </padding>
+                        <Label text="Seat Selection" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Separator style="-fx-background-color: #e0e0e0; -fx-padding: 5 0 10 0;"/>
+                        
+                        <VBox alignment="CENTER" spacing="15">
+                            <Label text="Select your preferred seats below:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" />
+                            
+                            <!-- Removed ScrollPane for seat layout -->
+                            <VBox fx:id="seatLayoutContainer" spacing="10" alignment="CENTER" style="-fx-padding: 15;">
+                                <!-- Seat layout will be generated here -->
+                            </VBox>
+                            
+                            <HBox spacing="20" alignment="CENTER">
+                                <Label text="Selected Seats:" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" />
+                                <TextField fx:id="seatNumbersField" editable="false" prefWidth="200" 
+                                           style="-fx-background-color: #f8f9fa; -fx-background-radius: 8;" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                    
+                    <!-- Payment and Confirmation Section -->
+                    <VBox style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 4);">
+                        <padding>
+                            <Insets top="20" right="25" bottom="20" left="25"/>
+                        </padding>
+                        <Label text="Payment &amp; Confirmation" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                        <Separator style="-fx-background-color: #e0e0e0; -fx-padding: 5 0 10 0;"/>
+                        
+                        <HBox spacing="30" alignment="CENTER" style="-fx-padding: 20;">
+                            <Label fx:id="paymentLabel" text="Complete payment to confirm booking" style="-fx-font-size: 16px; -fx-text-fill: #2c3e50;" />
+                            <Button fx:id="payButton" text="Proceed to Payment" onAction="#handlePayment" 
+                                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8;"
+                                    prefHeight="40" prefWidth="180" />
+                        </HBox>
+                        
+                        <HBox spacing="30" alignment="CENTER" style="-fx-padding: 10;">
+                            <Button fx:id="goBackDashboardButton" text="Return to Dashboard" onAction="#goBackToDashboard"
+                                    style="-fx-background-color: transparent; -fx-border-color: #4C8BF5; -fx-text-fill: #4C8BF5; -fx-font-weight: bold; -fx-background-radius: 8; -fx-border-radius: 8;"
+                                    prefHeight="40" prefWidth="180" />
+                            <Button fx:id="confirmButton" text="Confirm Booking" onAction="#confirmBooking" disable="true"
+                                    style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8;"
+                                    prefHeight="40" prefWidth="180" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </VBox>
+</StackPane>

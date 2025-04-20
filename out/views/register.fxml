@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.RegisterController" styleClass="root">
+    <!-- Background Image -->
+    <ImageView fitWidth="1700" fitHeight="900" preserveRatio="false">
+        <image>
+            <Image url="/airplane.jpg" />
+        </image>
+    </ImageView>
+
+    <children>
+        <!-- Center Container -->
+        <VBox layoutX="600" layoutY="200" spacing="20" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 5);">
+            <!-- Title -->
+            <Label text="Register" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #4C8BF5;" />
+
+            <!-- Username Field -->
+            <TextField fx:id="usernameField" promptText="Username" 
+                       style="-fx-pref-width: 250; -fx-pref-height: 35; -fx-font-size: 14px; -fx-border-radius: 5px; -fx-border-color: #CCCCCC; -fx-padding: 5 10;" />
+
+            <!-- Password Field -->
+            <PasswordField fx:id="passwordField" promptText="Password" 
+                          style="-fx-pref-width: 250; -fx-pref-height: 35; -fx-font-size: 14px; -fx-border-radius: 5px; -fx-border-color: #CCCCCC; -fx-padding: 5 10;" />
+
+            <!-- Register Button -->
+            <Button text="Register" onAction="#handleRegisterRedirect" 
+                    style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-pref-width: 250; -fx-pref-height: 35; -fx-font-size: 14px; -fx-font-weight: bold; -fx-border-radius: 5px;" />
+
+            <!-- Back to Login Button -->
+            <Button text="Back to Login" onAction="#handleLogin" 
+                    style="-fx-background-color: transparent; -fx-text-fill: #4C8BF5; -fx-pref-width: 250; -fx-pref-height: 35; -fx-font-size: 14px; -fx-border-color: #4C8BF5; -fx-border-radius: 5px;" />
+        </VBox>
+    </children>
+</AnchorPane>

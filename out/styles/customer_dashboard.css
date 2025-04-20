@@ -1,0 +1,51 @@
+/* Main container styling */
+.root {
+    -fx-background-color: transparent;
+}
+
+/* Title Label */
+.label {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Flight card styles inside VBox */
+.flights-container > .hbox {
+    -fx-background-color: #ffffffdd; /* Light glass effect */
+    -fx-background-radius: 12;
+    -fx-padding: 15 20;
+    -fx-spacing: 20;
+    -fx-alignment: CENTER_LEFT;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 4);
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+/* Labels inside flight card */
+.flights-container > .hbox > .label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #2c3e50;
+    -fx-wrap-text: true;
+    -fx-max-width: 600;
+}
+
+/* Book button */
+.flights-container > .hbox > .button {
+    -fx-background-color: #4C8BF5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-padding: 6 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+}
+
+.flights-container > .hbox > .button:hover {
+    -fx-background-color: #3a6fd5;
+}
+
+/* Glass panel background (VBox wrapper) */
+.vbox {
+    -fx-font-family: "Segoe UI", sans-serif;
+}

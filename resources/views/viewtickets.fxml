@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ViewTicketsController">
+    <!-- Background Image -->
+    <ImageView fitWidth="1700" fitHeight="900" preserveRatio="false">
+        <image>
+            <Image url="/airplane.jpg" />
+        </image>
+    </ImageView>
+
+    <!-- Main container with some spacing -->
+    <VBox alignment="TOP_CENTER" spacing="30">
+        <padding>
+            <Insets top="30" bottom="30" left="50" right="50"/>
+        </padding>
+
+        <Label text="View Tickets" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, black, 5, 0.3, 0, 2);" />
+
+        <!-- Glass Card -->
+        <VBox spacing="20" alignment="CENTER" maxWidth="800"
+              style="-fx-background-color: rgba(255,255,255,0.85); -fx-background-radius: 20; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 12, 0, 0, 6);">
+
+            <!-- Booking ID Input -->
+            <HBox spacing="15" alignment="CENTER">
+                <TextField fx:id="bookingIdField" promptText="Enter Booking ID" prefWidth="250"
+                           style="-fx-background-color: #f4f4f4; -fx-border-radius: 8; -fx-padding: 8;" />
+                <Button text="View Ticket" onAction="#loadTickets"
+                        style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 20;" />
+            </HBox>
+
+            <!-- Ticket List -->
+            <ScrollPane fitToWidth="true" prefHeight="250" style="-fx-background-color: transparent;">
+                <content>
+                    <VBox fx:id="ticketDisplayBox" spacing="10">
+                      <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                      </padding>
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <!-- Ticket Text Info -->
+            <TextArea fx:id="ticketText" editable="false" wrapText="true" prefHeight="100"
+                      style="-fx-background-color: #f4f4f4; -fx-border-radius: 8; -fx-padding: 10;" />
+
+            <!-- Action Buttons aligned at the bottom inside the glass background -->
+            <HBox spacing="20" alignment="CENTER" style="-fx-background-color: transparent;">
+                <Button text="Cancel Booking" onAction="#cancelBooking" fx:id="cancelBtn"
+                        style="-fx-background-color: #ff4c4c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 20;" />
+                <Button text="Go Back" onAction="#goBack" fx:id="goBackButton"
+                        style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 20;" />
+                <Button text="Dashboard" onAction="#goToDashboard" fx:id="goDashboardButton"
+                        style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-padding: 8 20;" />
+            </HBox>
+
+        </VBox>
+    </VBox>
+</StackPane>

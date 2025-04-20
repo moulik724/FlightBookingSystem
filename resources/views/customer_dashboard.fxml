@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.CustomerController" stylesheets="/styles/customer_dashboard.css">
+    <!-- Background Image -->
+    <ImageView fitWidth="1700" fitHeight="900" preserveRatio="false">
+        <image>
+            <Image url="/airplane.jpg" />
+        </image>
+    </ImageView>
+    
+    <!-- Airline Name at Top -->
+    <VBox alignment="TOP_CENTER" StackPane.alignment="TOP_CENTER">
+        <Label text="Aryavarta Airlines" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 3, 0, 0, 2);">
+            <padding>
+                <Insets top="20" bottom="10"/>
+            </padding>
+        </Label>
+    </VBox>
+    
+    <!-- Glassmorphic Main Container -->
+    <VBox alignment="TOP_CENTER" spacing="20" maxWidth="700" maxHeight="700" style="-fx-background-color: rgba(255, 255, 255, 0.85); -fx-background-radius: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 4);">
+        <padding>
+            <Insets top="25" left="30" right="30" bottom="25"/>
+        </padding>
+        <Label text="Explore &amp; Book Flights" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+        
+        <!-- Flight Cards Container -->
+        <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;" VBox.vgrow="ALWAYS" maxHeight="450">
+            <VBox fx:id="flightsContainer" spacing="12" style="-fx-padding: 5;"/>
+        </ScrollPane>
+        
+        <!-- Search Button -->
+        <Button text="Search Flights" onAction="#handleSearch"
+                style="-fx-background-color: #4C8BF5; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 8;"
+                prefHeight="40" prefWidth="180"/>
+        
+        <!-- Navigation Buttons -->
+<HBox spacing="20" alignment="CENTER">
+    <Button fx:id="viewProfileButton" text="View Profile" onAction="#handleViewProfile"
+            style="-fx-background-color: transparent; -fx-border-color: #4C8BF5; -fx-text-fill: #4C8BF5; -fx-font-weight: bold; -fx-background-radius: 8; -fx-border-radius: 8;"
+            prefHeight="35" prefWidth="140"/>
+    <Button fx:id="viewTicketsButton" text="View Tickets" onAction="#handleViewTickets"
+            style="-fx-background-color: transparent; -fx-border-color: #4C8BF5; -fx-text-fill: #4C8BF5; -fx-font-weight: bold; -fx-background-radius: 8; -fx-border-radius: 8;"
+            prefHeight="35" prefWidth="140"/>
+    <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout"
+            style="-fx-background-color: #ff4c4c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;"
+            prefHeight="35" prefWidth="140"/>
+</HBox>
+    </VBox>
+</StackPane>
