@@ -13,9 +13,6 @@ import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 
-/**
- * Email notification observer that sends emails when events occur
- */
 public class EmailObserver implements Observer {
     private String recipientEmail;
     

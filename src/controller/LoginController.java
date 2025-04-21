@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import utils.DashboardFactory;
+
 
 import utils.BookingContext;
 
@@ -45,25 +47,17 @@ private void handleLogin(ActionEvent event) {
         // Set the logged-in user's ID in BookingContext
         BookingContext.setLoggedInUserId(user.getId());
 
-        // Check the role of the user
-        String role = user.getRole();
-        switch (role) {
-            case "admin":
-                SceneSwitcher.switchTo("dashboard.fxml", "Admin Dashboard", event);
-                break;
-            case "manager":
-                SceneSwitcher.switchTo("manager_dashboard.fxml", "Manager Dashboard", event);
-                break;
-            case "customer":
-                SceneSwitcher.switchTo("customer_dashboard.fxml", "Customer Dashboard", event);
-                break;
-            default:
-                showAlert(Alert.AlertType.ERROR, "Login Failed", "Unknown role: " + role);
+        // Use the DashboardFactory to redirect based on user role
+        try {
+            DashboardFactory.redirectToDashboard(user.getRole(), event);
+        } catch (IllegalArgumentException e) {
+            showAlert(Alert.AlertType.ERROR, "Login Failed", e.getMessage());
         }
     } else {
         showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid credentials. Try again.");
     }
 }
+
 
 
 @FXML

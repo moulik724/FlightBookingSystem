@@ -7,7 +7,14 @@ public class DBConnection {
     private static final String USER = "root";
     private static final String PASS = "mou8088mach";
 
+    private static Connection connection;
+
+    private DBConnection() {}
+
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASS);
+        if (connection == null || connection.isClosed()){
+            connection = DriverManager.getConnection(URL, USER, PASS);
+        }
+        return connection;
     }
 }
